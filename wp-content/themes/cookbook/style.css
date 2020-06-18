@@ -1,0 +1,241 @@
+/*
+Theme Name: Cookbook
+Theme URI: localhost:8888/cookbook
+Author: Aleksandar Bjelica
+Author URI: https://www.linkedin.com/in/aleksandar-bjelica/
+Description: Tema za cookbook wp-test projekat
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: food, vegan, vegeterian, recipes
+Text Domain: cookbook
+*/
+
+/* ---- generalna podešavanja ---- */
+body {
+  font-family: 'Nunito', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #28C67D;
+  text-decoration: none;
+  transition: 0.2s linear all;
+}
+a:hover {
+  text-decoration: none;
+}
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ---- header logo ---- */
+header {
+  padding: 20px 0;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-content a {
+  display: flex;
+  align-items: center;
+}
+.site-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #28C67D;
+  margin: 0 0 0 5px;
+}
+/* ---- navigacija ---- */
+ul.menu {
+  margin: 0;
+  padding: 0;
+}
+ul.menu li {
+  display: inline-block;
+  margin-right: 55px;
+}
+ul.menu li:last-of-type {
+  margin-right: 0;
+}
+ul.menu li a {
+  font-weight: 700;
+}
+ul.menu li a:hover {
+  color: #F29F3F;
+}
+.current-menu-item a {
+  color: #F29F3F;
+}
+/* ---- homepage intro ---- */
+.homepage-intro {
+  min-height: 760px;
+  background: url('/cookbook/wp-content/uploads/2020/06/header.png') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.homepage-intro h1 {
+  color: #fff;
+  font-size: 52px;
+  font-weight: 700;
+  max-width: 660px;
+  line-height: 83px;
+  margin: 0 0 35px 0;
+}
+.homepage-intro h3 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+/* ---- homepage recipes section ---- */
+section#recipes {
+  padding: 80px 0;
+  font-size: 0;
+}
+.section-title {
+  color: #F29F3F;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  height: 50px;
+  margin: 0 0 50px 0;
+}
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background-color: #28C67D;
+}
+.recipe-small-box {
+  display: inline-block;
+  max-width: 270px;
+  margin-right: 30px;
+}
+.recipe-big-box {
+  display: inline-block;
+  max-width: 570px;
+  margin-right: 30px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.recipe-small-box:nth-of-type(3),
+.recipe-small-box:last-of-type {
+  margin-right: 0;
+}
+.recipe-small-box .recipe-title {
+  margin: 10px 0 0 0;
+}
+.recipe-small-box .recipe-title a {
+  font-size: 16px;
+  font-weight: 700;
+  color: #F29F3F;
+}
+.recipe-small-box .author-name {
+  font-size: 13px;
+  color: #28C67D;
+  margin: 13px 0 0 0;
+}
+.recipe-big-box .recipe-title {
+  position: absolute;
+  left: 20px;
+  bottom: 55px;
+  margin: 0;
+}
+.recipe-big-box .recipe-title a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.recipe-big-box .author-name {
+  position: absolute;
+  left: 20px;
+  bottom: 25px;
+  color: #fff;
+  font-size: 13px;
+  margin: 0;
+}
+section#recipes img {
+  border-radius: 4px;
+}
+/* ---- homepage lipsum section ---- */
+section#lipsum {
+  background-color: rgba(242, 159, 63, 0.15);
+  padding: 60px 0;
+}
+section#lipsum .section-title {
+  text-align: left;
+}
+section#lipsum .section-title:after {
+  left: 35px;
+}
+.lipsum-content {
+  font-size: 0;
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+}
+.lipsum-image {
+  max-width: 50%;
+  display: inline-block;
+}
+.lipsum-half {
+  max-width: calc(50% - 30px);
+  width: 100%;
+  display: inline-block;
+  padding-left: 30px;
+}
+.lipsum-half p {
+  font-size: 16px;
+  line-height: 29px;
+  color: #567084;
+}
+/* ---- homepage blog section ---- */
+section#blog {
+  padding: 80px 0;
+  font-size: 0;
+}
+section#blog .blog-box {
+  display: inline-block;
+  max-width: 370px;
+  margin-right: 30px;
+}
+section#blog .blog-box:last-of-type {
+  margin-right: 0;
+}
+/* ---- footer ---- */
+footer {
+  background-color: #18293C;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #567084;
+}
+.footer-content a {
+  display: flex;
+  align-items: center;
+}
+.copyright p {
+  text-align: right;
+  color: #567084;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 0;
+}
