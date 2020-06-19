@@ -4,6 +4,9 @@ function assets_povezivanje() {
   // povezivanje style.css-a sa temom
   wp_register_style('style', get_stylesheet_uri('style.css', __FILE__));
   wp_enqueue_style('style');
+  // povezivanje media.css-a sa temom
+  wp_register_style('media', get_stylesheet_uri('media.css', __FILE__));
+  wp_enqueue_style('media');
   // povezivanje jquery-a sa temom
   wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.5.1.slim.js', array(), null, true);

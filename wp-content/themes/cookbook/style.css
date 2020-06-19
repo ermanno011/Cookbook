@@ -16,6 +16,7 @@ body {
   font-family: 'Nunito', sans-serif;
   padding: 0;
   margin: 0;
+  margin-top: 62px; /* inicijalna visina header-a */
 }
 a {
   color: #28C67D;
@@ -31,10 +32,26 @@ a:hover {
   margin: 0 auto;
   padding: 0 15px;
 }
+.author-name {
+  font-size: 13px;
+  color: #28C67D;
+  margin: 15px 0 0 0;
+}
 
 /* ---- header logo ---- */
 header {
-  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #fff;
+  padding: 11px 0;
+  box-shadow: 0px 0px 15px #00000033;
+  transition: 0.2s linear all;
+}
+header.sticky {
+  padding: 5px 0;
 }
 .header-content {
   display: flex;
@@ -119,13 +136,18 @@ section#recipes {
   height: 4px;
   background-color: #28C67D;
 }
+.recipes-content {
+  overflow: hidden;
+}
 .recipe-small-box {
-  display: inline-block;
+  /* display: inline-block; */
+  float: left;
   max-width: 270px;
   margin-right: 30px;
 }
 .recipe-big-box {
-  display: inline-block;
+  /* display: inline-block; */
+  float: left;
   max-width: 570px;
   margin-right: 30px;
   position: relative;
@@ -143,11 +165,6 @@ section#recipes {
   font-weight: 700;
   color: #F29F3F;
 }
-.recipe-small-box .author-name {
-  font-size: 13px;
-  color: #28C67D;
-  margin: 13px 0 0 0;
-}
 .recipe-big-box .recipe-title {
   position: absolute;
   left: 20px;
@@ -161,11 +178,9 @@ section#recipes {
 }
 .recipe-big-box .author-name {
   position: absolute;
+  color: #fff;
   left: 20px;
   bottom: 25px;
-  color: #fff;
-  font-size: 13px;
-  margin: 0;
 }
 section#recipes img {
   border-radius: 4px;
@@ -205,15 +220,73 @@ section#lipsum .section-title:after {
 /* ---- homepage blog section ---- */
 section#blog {
   padding: 80px 0;
-  font-size: 0;
 }
-section#blog .blog-box {
-  display: inline-block;
+.blog-content {
+  overflow: hidden;
+}
+.blog-box {
+  /* display: inline-block; */
+  float: left;
   max-width: 370px;
   margin-right: 30px;
 }
-section#blog .blog-box:last-of-type {
+.blog-box:last-of-type {
   margin-right: 0;
+}
+.blog-box a {
+  font-size: 0;
+}
+.blog-box .recipe-title {
+  margin: 10px 0 0 0;
+}
+.blog-box .recipe-title a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #F29F3F;
+}
+/* ---- recipes page top section ---- */
+page#recipes .top-section {
+  background-color: #FDF1E2;
+  padding: 40px 0;
+}
+page#recipes .top-section h3 {
+  font-size: 33px;
+  font-weight: 700;
+  color: #28C67D;
+  height: 45px;
+  margin: 0 0 15px 0;
+}
+page#recipes .top-section p {
+  font-size: 16px;
+  color: #28C67D;
+  margin: 0;
+}
+page#recipes .bottom-section {
+  padding: 30px 0 20px 0;
+}
+page#recipes .recipe-box {
+  max-width: 370px;
+  width: 100%;
+  margin: 0 30px 30px 0;
+  overflow: hidden;
+  float: left;
+}
+page#recipes .recipe-box:nth-of-type(3n) {
+  margin-right: 0;
+}
+page#recipes .recipe-box img {
+  width: auto;
+  height: 225px;
+  border-radius: 4px;
+}
+page#recipes .recipe-box .recipe-title {
+  height: 60px;
+  margin: 0;
+}
+page#recipes .recipe-box .recipe-title a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #F29F3F;
 }
 /* ---- footer ---- */
 footer {

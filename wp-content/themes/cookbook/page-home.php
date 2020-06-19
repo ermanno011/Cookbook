@@ -10,36 +10,38 @@
   <section id="recipes">
     <div class="container">
       <h1 class="section-title">Lates Recipes</h1>
-      <?php $args=array(
-           'post_type' => 'recipes',
-           'post_status' => 'publish',
-           'posts_per_page' => 7,
-           'order'   => 'ASC',
-          );
-        $recipes_query = null;
-        $recipes_query = new WP_Query($args);
-        if( $recipes_query->have_posts() ) {
-          $i = 0;
-          while ($recipes_query->have_posts()) : $recipes_query->the_post(); ?>
-          <?php
-          if($i == 1) { ?>
-            <div class="recipe-big-box">
-              <?php the_post_thumbnail('full'); ?>
-              <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-              <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
-            </div>
-          <?php } else { ?>
-            <div class="recipe-small-box">
-              <?php the_post_thumbnail('full'); ?>
-              <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-              <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
-            </div>
-          <?php } ?>
-          <?php $i++;
-          endwhile;
-        }
-        wp_reset_query();
-        ?>
+      <div class="recipes-content">
+        <?php $args=array(
+             'post_type' => 'recipes',
+             'post_status' => 'publish',
+             'posts_per_page' => 7,
+             'order'   => 'ASC',
+            );
+          $recipes_query = null;
+          $recipes_query = new WP_Query($args);
+          if( $recipes_query->have_posts() ) {
+            $i = 0;
+            while ($recipes_query->have_posts()) : $recipes_query->the_post(); ?>
+            <?php
+            if($i == 1) { ?>
+              <div class="recipe-big-box">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full'); ?></a>
+                <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+                <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
+              </div>
+            <?php } else { ?>
+              <div class="recipe-small-box">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full'); ?></a>
+                <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+                <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
+              </div>
+            <?php } ?>
+            <?php $i++;
+            endwhile;
+          }
+          wp_reset_query();
+          ?>
+        </div>
     </div>
   </section>
 
@@ -57,27 +59,29 @@
   <section id="blog">
     <div class="container">
       <h1 class="section-title">Blog</h1>
-      <?php $args=array(
-           'post_type' => 'post',
-           'post_status' => 'publish',
-           'posts_per_page' => 3,
-           'order'   => 'ASC',
-          );
-        $recipes_query = null;
-        $recipes_query = new WP_Query($args);
-        if( $recipes_query->have_posts() ) {
-          $i = 0;
-          while ($recipes_query->have_posts()) : $recipes_query->the_post(); ?>
-            <div class="blog-box">
-              <?php the_post_thumbnail('full'); ?>
-              <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-              <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
-            </div>
-          <?php
-          endwhile;
-        }
-        wp_reset_query();
-        ?>
+      <div class="blog-content">
+        <?php $args=array(
+             'post_type' => 'post',
+             'post_status' => 'publish',
+             'posts_per_page' => 3,
+             'order'   => 'ASC',
+            );
+          $recipes_query = null;
+          $recipes_query = new WP_Query($args);
+          if( $recipes_query->have_posts() ) {
+            $i = 0;
+            while ($recipes_query->have_posts()) : $recipes_query->the_post(); ?>
+              <div class="blog-box">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full'); ?></a>
+                <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+                <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
+              </div>
+            <?php
+            endwhile;
+          }
+          wp_reset_query();
+          ?>
+        </div>
     </div>
   </section>
 
