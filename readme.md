@@ -7,7 +7,7 @@ Ukoliko projekat pokrećete u lokalu odraditi sledeća 4 koraka:
   2. U folderu gde ste instalirali jedan od ova 2 programa naći podfolder pod imenom 'htdocs'
   3. U 'htdocs' ubaciti 'Cookbook' folder koji ste klonirali ili skinuli sa git-a
   4. Pri pokretanju servera proveriti portove za localhost
-
+---- ---- ---- ---- ---- ----
 2. Ući u phpmyadmin i upload-ovati cookbook.sql[bazu] file iz foldera db-a skinutog sa gita klikom na 'import' dugme na vrhu ekrana
 3. Nakon upload-a baze ući na admin stranu wordpress-a - .../wp-admin i ulogovati se:
     username: admin
