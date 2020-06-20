@@ -50,6 +50,25 @@ header {
   box-shadow: 0px 0px 15px #00000033;
   transition: 0.2s linear all;
 }
+/* ---- wordpress admin bar - nav ---- */
+@media only screen and (min-width: 768px) {
+  header.logged-in {
+    top: 32px;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+  header.logged-in {
+    top: 46px;
+  }
+}
+/* ---- index.php ---- */
+.in-development {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+}
+
 header.sticky {
   padding: 5px 0;
 }
@@ -144,11 +163,13 @@ section#recipes {
   float: left;
   max-width: 270px;
   margin-right: 30px;
+  margin-bottom: 30px;
 }
 .recipe-big-box {
   /* display: inline-block; */
   float: left;
   max-width: 570px;
+  min-height: 258px;
   margin-right: 30px;
   position: relative;
   margin-bottom: 30px;
@@ -159,6 +180,7 @@ section#recipes {
 }
 .recipe-small-box .recipe-title {
   margin: 10px 0 0 0;
+  height: 50px;
 }
 .recipe-small-box .recipe-title a {
   font-size: 16px;
@@ -198,9 +220,6 @@ section#lipsum .section-title:after {
 }
 .lipsum-content {
   font-size: 0;
-  max-width: 1260px;
-  width: 100%;
-  margin: 0 auto;
 }
 .lipsum-image {
   max-width: 50%;
@@ -238,6 +257,7 @@ section#blog {
 }
 .blog-box .recipe-title {
   margin: 10px 0 0 0;
+  min-height: 60px;
 }
 .blog-box .recipe-title a {
   font-size: 20px;
@@ -253,7 +273,7 @@ page#recipes .top-section h3 {
   font-size: 33px;
   font-weight: 700;
   color: #28C67D;
-  height: 45px;
+  min-height: 45px;
   margin: 0 0 15px 0;
 }
 page#recipes .top-section p {
@@ -264,26 +284,26 @@ page#recipes .top-section p {
 page#recipes .bottom-section {
   padding: 30px 0 20px 0;
 }
-page#recipes .recipe-box {
+.recipe-box {
   max-width: 370px;
   width: 100%;
   margin: 0 30px 30px 0;
   overflow: hidden;
   float: left;
 }
-page#recipes .recipe-box:nth-of-type(3n) {
+.recipe-box:nth-of-type(3n) {
   margin-right: 0;
 }
-page#recipes .recipe-box img {
+.recipe-box img {
   width: auto;
   height: 225px;
   border-radius: 4px;
 }
-page#recipes .recipe-box .recipe-title {
-  height: 60px;
+.recipe-box .recipe-title {
+  min-height: 60px;
   margin: 0;
 }
-page#recipes .recipe-box .recipe-title a {
+.recipe-box .recipe-title a {
   font-size: 20px;
   font-weight: 700;
   color: #F29F3F;
@@ -311,4 +331,146 @@ footer {
   font-size: 16px;
   font-weight: 600;
   padding: 20px 0;
+}
+
+
+
+/* ---- media responsive ---- */
+@media only screen and (max-width: 1280px) {
+  .container {
+    max-width: 870px;
+  }
+  .section-title {
+    font-size: 32px;
+    margin: 0 0 40px 0;
+  }
+  .homepage-intro {
+    min-height: 600px;
+  }
+  .homepage-intro h1 {
+    font-size: 40px;
+    line-height: 150%;
+  }
+  .homepage-intro h3 {
+    font-size: 26px;
+  }
+  .recipe-big-box {
+    max-width: 270px;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .recipe-small-box:nth-of-type(6) {
+    margin-right: 0;
+  }
+  .recipe-small-box:last-of-type {
+    margin-bottom: 0;
+  }
+  .lipsum-image {
+    display: block;
+    margin: 0 auto 30px;
+  }
+  .lipsum-half {
+    max-width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  section#lipsum .section-title {
+    text-align: center;
+  }
+  section#lipsum .section-title:after {
+    left: 50%;
+  }
+  .blog-box {
+    max-width: 270px;
+  }
+  .blog-box img {
+    width: 100%;
+    height: auto;
+  }
+  .recipes-content .recipe-box {
+    max-width: 270px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .container {
+    max-width: 570px;
+  }
+  ul.menu li {
+    margin-right: 15px;
+  }
+  .section-title {
+    font-size: 28px;
+    margin: 0 0 30px 0;
+  }
+  section#recipes,
+  section#lipsum,
+  section#blog {
+    padding: 40px 0;
+  }
+  .homepage-intro {
+    min-height: 400px;
+  }
+  .homepage-intro h1 {
+    font-size: 34px;
+    line-height: 150%;
+  }
+  .homepage-intro h3 {
+    font-size: 18px;
+  }
+  .recipe-big-box,
+  .recipe-small-box:nth-of-type(4) {
+    margin-right: 0;
+  }
+  .recipe-small-box:nth-of-type(3) {
+    margin-right: 30px;
+  }
+  .lipsum-image {
+    max-width: 75%;
+  }
+  .blog-box {
+    margin-bottom: 30px;
+  }
+  .blog-box:nth-of-type(2) {
+    margin-right: 0;
+  }
+  .blog-box:last-of-type {
+    margin-bottom: 0;
+  }
+  .recipes-content .recipe-box:nth-of-type(3n) {
+    margin-right: 30px;
+  }
+  .recipes-content .recipe-box:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 370px;
+  }
+  ul.menu li {
+    display: none;
+  }
+  section#recipes,
+  section#lipsum,
+  section#blog {
+    padding: 20px 0;
+  }
+  .recipes-content .recipe-small-box,
+  .recipes-content .recipe-big-box,
+  .blog-content .blog-box,
+  page#recipes .recipe-box {
+    float: none;
+    margin: 0 auto 30px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .container {
+    max-width: 270px;
+  }
+  .recipes-content .recipe-small-box,
+  .recipes-content .recipe-big-box,
+  .blog-content .blog-box,
+  page#recipes .recipe-box {
+    max-width: 100%;
+  }
 }

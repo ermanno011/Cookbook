@@ -1,3 +1,4 @@
+<?php /* Template Name: Home template */ ?>
 <?php get_header(); ?>
 
   <div class="homepage-intro">
@@ -27,13 +28,13 @@
               <div class="recipe-big-box">
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full'); ?></a>
                 <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-                <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
+                <h5 class="author-name">by <?php echo get_the_author_meta('display_name'); ?></h5>
               </div>
             <?php } else { ?>
               <div class="recipe-small-box">
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full'); ?></a>
                 <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-                <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
+                <h5 class="author-name">by <?php echo get_the_author_meta('display_name'); ?></h5>
               </div>
             <?php } ?>
             <?php $i++;
@@ -46,7 +47,7 @@
   </section>
 
   <section id="lipsum">
-    <div class="lipsum-content">
+    <div class="container lipsum-content">
       <img class="lipsum-image" src="/cookbook/wp-content/uploads/2020/06/Middle-section-images.png" alt="Lipsum section left part images">
       <div class="lipsum-half">
         <h1 class="section-title">Lorem ipsum dolor sit amet</h1>
@@ -74,7 +75,7 @@
               <div class="blog-box">
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full'); ?></a>
                 <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-                <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
+                <h5 class="author-name">by <?php echo get_the_author_meta('display_name'); ?></h5>
               </div>
             <?php
             endwhile;

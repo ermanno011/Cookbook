@@ -1,3 +1,4 @@
+<?php /* Template Name: Recipes template */ ?>
 <?php get_header(); ?>
 
 <page id="recipes">
@@ -23,7 +24,7 @@
               <div class="recipe-box">
                 <a class="image-box" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('medium'); ?></a>
                 <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-                <h5 class="author-name"><?php echo get_the_author_meta('display_name'); ?></h5>
+                <h5 class="author-name">by <?php echo get_the_author_meta('display_name'); ?></h5>
               </div>
           <?php endwhile;
           }

@@ -9,7 +9,7 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <header>
+    <header class="<?php if ( is_user_logged_in() ) { echo 'logged-in';} ?>">
       <div class="container">
         <div class="header-content">
           <a href="<?php echo home_url(); ?>">
